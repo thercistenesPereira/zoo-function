@@ -20,7 +20,7 @@ const countEntrants = (entrants) => {
 };
 
 const calculateEntry = (entrants) => {
-  if (!entrants || []) {
+  if (!entrants || entrants.length === 0) {
     return 0;
   }
   const { prices } = data;
@@ -28,7 +28,7 @@ const calculateEntry = (entrants) => {
 
   const total = (adult * prices.adult) + (senior * prices.senior) + (child * prices.child);
 
-  return total.toFixed(2);
+  return total;
 };
 
 module.exports = { calculateEntry, countEntrants };
